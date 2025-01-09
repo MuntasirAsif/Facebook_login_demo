@@ -1,6 +1,8 @@
 import 'package:facebook_login_page_demo/constant/colors.dart';
 import 'package:facebook_login_page_demo/constant/image_string.dart';
 import 'package:facebook_login_page_demo/constant/text_string.dart';
+import 'package:facebook_login_page_demo/page/news_feed.dart';
+import 'package:facebook_login_page_demo/page/post_screen.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatelessWidget {
@@ -64,20 +66,25 @@ class LoginPage extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 20,),
-              Container(
-                height: 60,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                    color: buttonBgColor,
-                    borderRadius: BorderRadius.circular(20)),
-                child: Center(
-                    child: Text(
-                  loginText,
-                  style: TextStyle(
-                      color: buttonTextColor,
-                      fontSize: 24,
-                      fontWeight: FontWeight.w600),
-                )),
+              InkWell(
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>const PostScreen()));
+                },
+                child: Container(
+                  height: 60,
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                      color: buttonBgColor,
+                      borderRadius: BorderRadius.circular(20)),
+                  child: Center(
+                      child: Text(
+                    loginText,
+                    style: TextStyle(
+                        color: buttonTextColor,
+                        fontSize: 24,
+                        fontWeight: FontWeight.w600),
+                  )),
+                ),
               ),
               const SizedBox(height: 20,),
               Text(forgetPasswordText,style: TextStyle(color: linkTextColor,fontSize: 15),),
